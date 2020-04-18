@@ -22,26 +22,57 @@
       <h5 class="my-0 mr-md-auto font-weight-normal">Arkademy</h5>
       <nav class="my-2 my-md-0 mr-md-3">
       </nav>
-      <a class="btn btn-outline-primary" href="#">ADD</a>
+      <a class="btn btn-outline-primary" href="<?php echo base_url('index/add_kasir/') ?>">ADD</a>
     </div>
 
-    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-    <div class="row">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
- 
-    </div>
+     </div>
 
     <div class="container">
       <div class="card-deck mb-3 text-center"></div>
-
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title"></h3>
+            </div>
+            <div class="card-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th width="30px">No</th>
+                  <th>Cashier</th>
+                  <th>Product</th>
+                  <th>Category</th>
+                  <th>Price</th>
+                  <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php 
+                  $no = 0;
+                  foreach ($data_kasir->result() as $value):
+                    $no++;
+                ?>  
+                <tr>
+                  <td><?php echo $no; ?></td>
+                  <td><?php echo $value->namakasir ?></td>
+                  <td><?php echo $value->produknama; ?></td>
+                  <td><?php echo $value->kategorinama ?></td>
+                  <td><?php echo $value->produkharga; ?></td>
+                  <td>
+                  <a href="<?php echo base_url('index/edit_kasir/').$value->id; ?>" class="btn btn-xs btn-warning"><i class="nav-icon fas fa-edit"></i> Edit</a>
+                    <a href="<?php echo base_url('index/hapus_kasir/').$value->id; ?>" class="btn btn-xs btn-danger"><i class="nav-icon fas fa-trash"></i> Hapus</a>
+                  </td>
+                </tr>
+                <?php 
+                  endforeach;
+                ?>
+                </tbody>
+    
+              </table>
+            </div>
+        </div>
+        </div>
      
     </div>
 

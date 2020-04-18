@@ -6,7 +6,10 @@ class Index extends CI_Controller{
 	}
 
 	function index(){
-		$this->load->view('index');
-	}
 
+		$data['data_kasir'] = $this->M_Kasir->data_kasir();
+		$this->load->view('index',$data);
+    }
+    
+	
 }
