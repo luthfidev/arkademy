@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const app = express();
 app.use(bodyParser.json());
 
-app.get("/v1/biodata/:name/:age", (req, res) => {
+app.get("/:name/:age", (req, res) => {
     let name = req.params.name;
     let age  = req.params.age;
     
@@ -56,4 +56,4 @@ app.get("/v1/biodata/:name/:age", (req, res) => {
 
 });
 
-app.listen(3000, () => console.log('Berjalan di localhost:3000'));
+app.listen(3000, () => console.log('Server Sudah aktif di Port 3000'));
