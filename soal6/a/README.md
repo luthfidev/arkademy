@@ -1,1 +1,1 @@
-![alt text](https://raw.githubusercontent.com/luthfidev/arkademy/soal6/a/1.jpg)
+![alt text](https://github.com/luthfidev/arkademy/blob/master/soal6/a/1.jpg)
