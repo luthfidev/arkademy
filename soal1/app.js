@@ -1,4 +1,4 @@
-const express    = require('expres');
+const express    = require('express');
 const bodyParser = require('body-parser');
 
 const app = express();
@@ -55,3 +55,5 @@ app.get("/v1/biodata/:name/:age", (req, res) => {
     });
 
 });
+
+app.listen(3000, () => console.log('Berjalan di localhost:3000'));
