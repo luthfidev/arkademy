@@ -1,8 +1,6 @@
-# Password validation in Python 
-# using naive method 
+
 import re 
-  
-# Function to validate the password 
+
 def username_check(username): 
       
     SpecialSym =['@'] 
@@ -23,35 +21,32 @@ def username_check(username):
         return val
 
 def password_check(password): 
-    reg = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!#%*?&]{6,20}$"
-      
-    # compiling regex 
-    pat = re.compile(reg) 
-      
-    # searching regex                  
-    mat = re.search(pat, password)
-
+    
     val = True
-      
+     
     if len(password) < 2: 
-        print('length should be at least 6') 
+        print('Minimal 2 karakter') 
         val = False
           
     if len(password) > 12: 
-        print('length should be not be greater than 8') 
+        print('Maksimal karakter 12') 
         val = False
-          
+    
+    reg = "\D"
+    pat = re.compile(reg)            
+    mat = re.search(pat, password)
     if mat: 
-        print('Password should have at least one of the symbols $@#') 
+        print('Password harus berisi digit') 
         val = False
     if val: 
         return val  
   
-# Main method 
+
 def main():
 
-    username = 'koders' 
-    password = '123123@'
+    x = '@'
+    username = x,'koders' 
+    password = '123123'
 
         
     if (username_check(username)): 
@@ -60,12 +55,10 @@ def main():
         print("Username Salah")
 
     if (password_check(password)):
-        print("Valid")
+        print("Password Valid")
     else:
-        print("not Valid")
+        print("Password Tidak Valid")
 
-    
-          
-# Driver Code         
+           
 if __name__ == '__main__': 
     main() 
